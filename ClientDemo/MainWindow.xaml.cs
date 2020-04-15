@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,5 +26,20 @@ namespace ClientDemo
         {
             InitializeComponent();
         }
+
+        private async void GetSum_Click(object sender, RoutedEventArgs e)
+        {
+            double ris = 0;
+            int a = Convert.ToInt32(txtN1);
+            int b = Convert.ToInt32(txtN2);
+            HttpClient Client = new HttpClient();
+            string uri = $"https://localhost:44375/api/Operation/GetSum?a={a}&b={b}";
+            HttpResponseMessage response = await Client.GetAsync(uri);
+            string content = await response.Content.ReadAsStringAsync();
+            ris = JsonConvert.DeserializeObject<double>(content);
+            Dispatcher.Invoke(() => lblRis.Content = ris);
+
+        }
+
     }
 }
