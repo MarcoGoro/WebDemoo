@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Button x:Name="GetSum" Content="GetSum" HorizontalAlignment="Left" Margin="165,271,0,0" VerticalAlignment="Top" Height="50" Width="101"/>
+        <TextBox x:Name="txtN1" HorizontalAlignment="Left" Margin="194,87,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Height="53"/>
+        <TextBox x:Name="txtN2" HorizontalAlignment="Left" Height="53" Margin="424,87,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+        <Label Content="Numero1" HorizontalAlignment="Left" Height="29" Margin="194,53,0,0" VerticalAlignment="Top" Width="144"/>
+        <Label Content="Numero2" HorizontalAlignment="Left" Height="29" Margin="424,50,0,0" VerticalAlignment="Top" Width="144"/>
+        <Label x:Name="lblRis" Content="0" HorizontalAlignment="Left" Height="53" Margin="309,0,0,0" VerticalAlignment="Center" Width="160"/>
 
     </Grid>
 </Window>
